@@ -1,0 +1,13 @@
+* create folder with name " gunicorn_setup_files " inside django root folder
+*file name "gunicorn.socket"
+
+------------------------------ copy ---------------------------
+[Unit]
+Description=gunicorn socket
+
+[Socket]
+ListenStream=/run/gunicorn.sock
+
+[Install]
+WantedBy=sockets.target
+------------------------------ paste -------------------------
