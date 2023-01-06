@@ -1,0 +1,22 @@
+*file name : database.txt
+
+---------------------------------------------------------- copy ----------------------------------------------------
+#!/bin/bash
+
+echo "--------------------------------Install POSTGRES--------------------------"
+sudo apt install postgresql postgresql-contrib
+echo "--------------------------------DONE Install POSTGRES--------------------------"
+
+echo "--------------------------------Creating Database --------------------------"
+sudo -u postgres psql -c "CREATE DATABASE database_name"
+echo "--------------------------------Creating Database Done--------------------------"
+
+echo "--------------------------------Changing User's Password --------------------------"
+sudo -u postgres psql -c "ALTER USER postgres WITH PASSWORD 'root'"
+echo "--------------------------------Done User's Password --------------------------"
+
+echo "--------------------------------Granting All permission to user --------------------------"
+sudo -u postgres psql -c  "GRANT ALL PRIVILEGES ON DATABASE hvp TO postgres"
+echo "--------------------------------Done Granting All permission to user --------------------------"
+
+---------------------------------------------------------end copy --------------------------------
