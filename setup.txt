@@ -92,3 +92,13 @@ first create your jenkins file and other files
         enter build button
             it will setup your database, gunicorn, nginx and others
         
+* webhook trigger
+      webhook is a link to the jenkins url, when it will be hitted by bitbucket after push the code. The build will start automatically in jenkins.
+      
+            **note : First to prevent " 403 no valid crumb " inside the webhook. we need to disable the jenkins CSRF.
+            
+            go to " Dashboard > Manage Jenkins > Script Console "
+            run "  hudson.security.csrf.GlobalCrumbIssuerConfiguration.DISABLE_CSRF_PROTECTION = true  "
+            output : true
+            
+            now go to the webhook.txt
