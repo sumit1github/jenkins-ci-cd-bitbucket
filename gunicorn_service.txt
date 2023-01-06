@@ -1,0 +1,22 @@
+* create folder with name " gunicorn_setup_files " inside django root folde
+*file name "gunicorn.service"
+
+-------------------------------- copy ------------------------------------
+[Unit]
+Description=gunicorn daemon
+Requires=gunicorn.socket
+After=network.target
+
+[Service]
+User=ubuntu           <----------------------------
+Group=www-data
+WorkingDirectory=/var/lib/jenkins/workspace/project_dir   <----------------------------
+ExecStart=/var/lib/jenkins/workspace/project_dir/env/bin/gunicorn \  <----------------------------
+          --access-logfile - \
+          --workers 3 \
+          --bind unix:/run/gunicorn.sock \
+          project_name.wsgi:application            <---------------------------- folder: where settings.py is present
+
+[Install]
+WantedBy=multi-user.target
+-------------------------------- paste -----------------------------------
