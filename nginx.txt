@@ -1,0 +1,25 @@
+* file name "nginx.sh"
+
+* need to create a file with name "my_project.conf".
+    follow my_project.txt
+   
+
+------------------------------ copy --------------------------------
+#!/bin/bash
+
+cd /var/lib/jenkins/workspace/project_dir    <------------------------
+
+sudo cp -rf myproject.conf /etc/nginx/sites-available/myproject
+
+
+sudo ln -s /etc/nginx/sites-available/myproject /etc/nginx/sites-enabled
+sudo nginx -t
+
+sudo ufw allow 'Nginx Full'
+sudo systemctl start nginx
+sudo systemctl enable nginx
+
+echo "Nginx has been started"
+
+sudo systemctl status nginx
+------------------------------ endcopy ----------------------------
