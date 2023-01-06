@@ -1,4 +1,7 @@
 ## webhook should looks like
+          to create webhook, go to remo setting and webhook
+          paste the below link and check all the read operations
+          
 http://{userame}:{password}@{jenkins url and port}/job/{project_name}/build?token={token}
 
 username and password:
