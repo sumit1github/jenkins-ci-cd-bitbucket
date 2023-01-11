@@ -4,6 +4,9 @@
           
 http://{userame}:{password}@{jenkins url and port}/job/{project_name}/build?token={token}
 
+**note: for special caracter in password (eg: @1)
+          *after filling data in the url, copy the url and paste it in browser url(**dont hit enter).
+          *again copy from browser and paste in webhook.
 username and password:
           when you login to jenkins dashboard, there you can get option ***manage-users(under Security). 
           you have to create your jenkins user with password.
