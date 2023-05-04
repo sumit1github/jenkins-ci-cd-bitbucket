@@ -10,9 +10,15 @@ normally sudo commands will not execute directly in .sh file. Have to permission
     sudo su -s /bin/bash jenkins
     ssh-keygen
     # enter enter
-    ls
+    
+    --> now you can check where my ssh keys as stored. You can go usign cd command
     
     
+    ****** very important
+    need to runthis command in ubuntu termial to add the fingerprint
+    
+    ssh -T git@bitbucket.org
+   
     
 # id_rsa and id_rsa.pub will be there
 
